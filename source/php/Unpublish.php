@@ -11,7 +11,7 @@ class Unpublish
     {
         add_action('post_submitbox_misc_actions', array($this, 'setupUi'));
         add_action('save_post', array($this, 'saveUnpublish'), $this->saveUnpublishProiority);
-        add_action('unpublish_post', array($this, 'unpublishPost'));
+        add_action('unpublish_post', array($this, 'unpublishPost'), 10, 2);
     }
 
     /**
@@ -75,8 +75,8 @@ class Unpublish
 
         //Schedule new event
         wp_schedule_single_event($eventTimestamp, 'unpublish_post', array(
-            'post_id' => $postId,
-            'action' => $eventAction
+            $postId,
+            $eventAction
         ));
 
         //Remove this action to avoid multiple posts being unscheduled
