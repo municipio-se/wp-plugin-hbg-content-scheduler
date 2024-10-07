@@ -1,5 +1,5 @@
 {
-    "name": "helsingborg-stad/content-scheduler",
+    "name": "municipio-lts/wp-plugin-hbg-content-scheduler-2024",
     "description": "Nicer major publising actions interface and feature for post unpublising scheduleing",
     "type": "wordpress-plugin",
     "license": "MIT",
@@ -7,8 +7,33 @@
         {
             "name": "Kristoffer Svanmark",
             "email": "kristoffer.svanmark@lexiconitkonsult.se"
+        },
+        {
+            "name": "Whitespace",
+            "email": "code@whitespace.se"
         }
     ],
+    "minimum-stability": "stable",
+    "extra": {
+        "installer-name": "content-scheduler",
+        "installer-paths": {
+            "vendor/{$vendor}/{$name}/": [
+                "vendor:wpackagist-plugin",
+                "type:wordpress-plugin",
+                "type:wordpress-muplugin"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "ContentScheduler\\": "source/php/"
+        }
+    },
     "repositories": [
         {
             "type": "vcs",
@@ -16,12 +41,11 @@
         }
     ],
     "require": {
+        "composer/installers": "~2.2",
         "helsingborg-stad/acf-export-manager": ">=1.0.0"
     },
-    "autoload": {
-        "psr-4": {
-            "ContentScheduler\\": "source/php/"
-        }
-    },
-    "version": "3.1.3"
+    "require-dev": {
+        "10up/wp_mock": "dev-trunk#1.0.1",
+        "php-mock/php-mock-mockery": "^1.4"
+    }
 }

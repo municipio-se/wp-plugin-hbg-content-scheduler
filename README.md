@@ -1,6 +1,26 @@
 # Content Scheduler
 
-Nicer interface for major publishing actions. Includes:
-* Nicer checkboxes for visibility option
-* Datepicker for publish date selection
-* New feature for unpublising scheduling with datepicker
+This plugin is an LTS version of the [Content Scheduler plugin](https://github.com/helsingborg-stad/content-scheduler).
+
+## Installation
+
+1. Add the following to your `composer.json` file:
+   ```json
+   {
+     "repositories": [
+       {
+         "type": "vcs",
+         "url": "https://github.com/municipio-lts/wp-plugin-hbg-content-scheduler-2024.git",
+         "only": [
+           "municipio-lts/wp-plugin-hbg-content-scheduler-2024"
+         ],
+         "no-api": true
+       },
+     ]
+   }
+   ```
+2. Install the package:
+   ```bash
+   composer require municipio-lts/wp-plugin-hbg-content-scheduler-2024:dev-lts/v3.1.3
+   ```
+3. Activate the plugin in WordPress.
