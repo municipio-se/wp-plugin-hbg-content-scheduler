@@ -24,13 +24,6 @@ define('CONTENTSCHEDULER_TEMPLATE_PATH', CONTENTSCHEDULER_PATH . 'templates/');
 
 load_plugin_textdomain('content-scheduler', false, plugin_basename(dirname(__FILE__)) . '/languages');
 
-// Autoload from plugin
-if (file_exists(CONTENTSCHEDULER_PATH . 'vendor/autoload.php')) {
-	require_once CONTENTSCHEDULER_PATH . 'vendor/autoload.php';
-}
-require_once CONTENTSCHEDULER_PATH . 'Public.php';
-
-
 // Acf auto import and export
 add_action('plugins_loaded', function () {
 		$acfExportManager = new AcfExportManager\AcfExportManager();
