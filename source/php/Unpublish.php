@@ -126,14 +126,12 @@ class Unpublish
      * Compiles the event timestamp based on the given meta data.
      *
      * @param array $meta The meta data containing the event details.
-     * @return string The compiled event timestamp in the format 'YYYY-MM-DD HH:MM:SS'.
+     * @return int The compiled event timestamp.
      */
-    private function compileEventTimestamp($meta): string
-    {
-        $offset = $this->getTimeZoneOffset();
-        $timestamp = $meta['aa'] . '-' . $meta['mm'] . '-' . $meta['jj'] . ' ' . $meta['hh'] . ':' . $meta['mn'] . ':00';
-        $eventTimestamp = gmdate('Y-m-d H:i:s', strtotime($timestamp . ' ' . $offset));
-        return $eventTimestamp;
+    private function compileEventTimestamp($meta): int {
+        $dateString = $meta['aa'] . '-' . $meta['mm'] . '-' . $meta['jj'] . ' ' . $meta['hh'] . ':' . $meta['mn'] . ':00';
+        $timestamp = strtotime($dateString);
+        return $timestamp;
     }
 
     /**
