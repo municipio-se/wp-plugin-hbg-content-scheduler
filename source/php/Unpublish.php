@@ -129,11 +129,14 @@ class Unpublish
      * @return int The compiled event timestamp.
      */
     private function compileEventTimestamp($meta): int {
+        date_default_timezone_set('Europe/Stockholm');
+    
         $dateString = $meta['aa'] . '-' . $meta['mm'] . '-' . $meta['jj'] . ' ' . $meta['hh'] . ':' . $meta['mn'] . ':00';
+        
         $timestamp = strtotime($dateString);
         return $timestamp;
     }
-
+    
     /**
      * Gets the desired action to make for the post.
      *
