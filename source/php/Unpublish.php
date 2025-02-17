@@ -55,19 +55,19 @@ class Unpublish
             return;
         }
 
+        //Allocate the necessary data
+        $eventAction        = $this->getDesiredAction($postId);
+        $eventTimeMetadata  = $this->getUnpublishTimeMetadata();
+        $eventTimestamp     = $this->compileEventTimestamp($eventTimeMetadata);
+
         // Remove previous event
-        $this->unschedulePreviousEvent($postId);
+        $this->unschedulePreviousEvent($postId, $eventAction);
 
         // Clear event metadata if the 'unpublish-active' flag is not set to 'true'
         // And abort futher processing.
         if ($this->clearEventMetadata($postId)) {
             return;
         }
-
-        //Allocate the necessary data
-        $eventAction        = $this->getDesiredAction($postId);
-        $eventTimeMetadata  = $this->getUnpublishTimeMetadata();
-        $eventTimestamp     = $this->compileEventTimestamp($eventTimeMetadata);
 
         //Update posts meta accordingly
         update_post_meta($postId, 'unpublish-date', $eventTimeMetadata);
@@ -181,9 +181,10 @@ class Unpublish
      * @param int $postId The ID of the post.
      * @return void
      */
-    private function unschedulePreviousEvent($postId): void {
+    private function unschedulePreviousEvent($postId, $eventAction): void {
         $args = array(
-            'post_id' => $postId
+            $postId,
+            $eventAction
         );
         wp_unschedule_event(
             wp_next_scheduled(
