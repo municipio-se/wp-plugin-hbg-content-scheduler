@@ -60,14 +60,14 @@ class Unpublish
         // Remove previous event
         $this->unschedulePreviousEvent($postId, $eventAction);
 
-        $eventTimeMetadata = $this->getUnpublishTimeMetadata();
-        $eventTimestamp = $this->compileEventTimestamp($eventTimeMetadata);
-
         // Clear event metadata if the 'unpublish-active' flag is not set to 'true'
         // And abort futher processing.
         if ($this->clearEventMetadata($postId)) {
             return;
         }
+
+        $eventTimeMetadata = $this->getUnpublishTimeMetadata();
+        $eventTimestamp = $this->compileEventTimestamp($eventTimeMetadata);
 
         //Update posts meta accordingly
         update_post_meta($postId, 'unpublish-date', $eventTimeMetadata);
