@@ -1,5 +1,5 @@
 {
-    "name": "municipio-lts/wp-plugin-hbg-content-scheduler-2024",
+    "name": "municipio/wp-plugin-hbg-content-scheduler",
     "description": "Nicer major publising actions interface and feature for post unpublising scheduleing",
     "type": "wordpress-plugin",
     "license": "MIT",
