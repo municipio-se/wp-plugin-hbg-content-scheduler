@@ -1,51 +1,51 @@
 {
-    "name": "municipio/wp-plugin-hbg-content-scheduler",
-    "description": "Nicer major publising actions interface and feature for post unpublising scheduleing",
-    "type": "wordpress-plugin",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Kristoffer Svanmark",
-            "email": "kristoffer.svanmark@lexiconitkonsult.se"
-        },
-        {
-            "name": "Whitespace",
-            "email": "code@whitespace.se"
-        }
-    ],
-    "minimum-stability": "stable",
-    "extra": {
-        "installer-name": "content-scheduler",
-        "installer-paths": {
-            "vendor/{$vendor}/{$name}/": [
-                "vendor:wpackagist-plugin",
-                "type:wordpress-plugin",
-                "type:wordpress-muplugin"
-            ]
-        }
+  "name": "municipio/wp-plugin-hbg-content-scheduler",
+  "description": "Nicer major publising actions interface and feature for post unpublising scheduleing",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Kristoffer Svanmark",
+      "email": "kristoffer.svanmark@lexiconitkonsult.se"
     },
-    "config": {
-        "allow-plugins": {
-            "composer/installers": true
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "ContentScheduler\\": "source/php/"
-        }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/helsingborg-stad/acf-export-manager.git"
-        }
-    ],
-    "require": {
-        "composer/installers": "~2.2",
-        "helsingborg-stad/acf-export-manager": ">=1.0.0"
-    },
-    "require-dev": {
-        "10up/wp_mock": "dev-trunk#1.0.1",
-        "php-mock/php-mock-mockery": "^1.4"
+    {
+      "name": "Whitespace",
+      "email": "code@whitespace.se"
     }
+  ],
+  "minimum-stability": "stable",
+  "extra": {
+    "installer-name": "content-scheduler",
+    "installer-paths": {
+      "vendor/{$vendor}/{$name}/": [
+        "vendor:wpackagist-plugin",
+        "type:wordpress-plugin",
+        "type:wordpress-muplugin"
+      ]
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "ContentScheduler\\": "source/php/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/helsingborg-stad/acf-export-manager.git"
+    }
+  ],
+  "require": {
+    "composer/installers": "~2.2",
+    "helsingborg-stad/acf-export-manager": ">=1.0.0"
+  },
+  "require-dev": {
+    "10up/wp_mock": "dev-trunk#1.0.1",
+    "php-mock/php-mock-mockery": "^1.4"
+  }
 }
