@@ -1,6 +1,6 @@
-# Content Scheduler
+# HBG Content Scheduler
 
-This plugin is an LTS version of the [Content Scheduler plugin v3.1.3](https://github.com/helsingborg-stad/content-scheduler/tree/3.1.3).
+This plugin is a [Municipio LTS](https://github.com/municipio-se/municipio-lts) version of the [Content Scheduler plugin v3.1.3](https://github.com/helsingborg-stad/content-scheduler/tree/3.1.3).
 
 ## Changes in this Fork
 
