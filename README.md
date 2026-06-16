@@ -1,6 +1,15 @@
 # HBG Content Scheduler
 
-This plugin is a [Municipio LTS](https://github.com/municipio-se/municipio-lts) version of the [Content Scheduler plugin v3.1.3](https://github.com/helsingborg-stad/content-scheduler/tree/3.1.3).
+This plugin is a [Municipio LTS](https://github.com/municipio-se/municipio-lts)
+version of Helsingborg stad's
+[Content Scheduler plugin](https://github.com/helsingborg-stad/content-scheduler).
+
+## Fork Base
+
+This LTS fork is based on upstream tag
+[`3.1.3`](https://github.com/helsingborg-stad/content-scheduler/tree/3.1.3),
+commit
+[`2b12bf4`](https://github.com/helsingborg-stad/content-scheduler/commit/2b12bf43e00487e5fe0ae432e8d7156f71bd4e2b).
 
 ## Changes in this Fork
 
